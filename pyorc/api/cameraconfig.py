@@ -98,6 +98,7 @@ class CameraConfig:
         assert(isinstance(height, int)), 'height must be provided as type "int"'
         assert(isinstance(width, int)), 'width must be provided as type "int"'
         assert (isinstance(window_size, int)), 'window_size must be of type "int"'
+        print("Setting camera configuration")
         self.height = height
         self.width = width
         self.is_nadir = is_nadir
@@ -712,6 +713,7 @@ class CameraConfig:
             dist_coeffs: Optional[List[List]] = None,
             lens_pars: Optional[Dict[str, float]] = None
     ):
+        print("Setting intrinsic parameters")
         # first set a default estimate from pose if 3D gcps are available
         self.set_lens_pars()  # default parameters use width of frame
         if hasattr(self, "gcps"):
